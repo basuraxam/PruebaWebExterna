@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html lang="es" class="PantallaCompleta">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Mi Cuenta Digi</title>
+        <meta name="description" content="Acceso a Mi Cuenta Digi">
+        <meta name="author" content="Basura">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="theme-color" content="#14171b">
+
+        <link rel="shortcut icon" href="assets/icons/digi.ico">
+        <link rel="manifest" href="manifest.json">
+        
+        <!-- Add to home screen for Safari on iOS -->
+        <link rel="apple-touch-icon" href="assets/icons/ios-180x180.png">
+
+        <meta name="apple-mobile-web-app-title" content="Mi Cuenta Digi">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <!------------------------------------------->
+
+        <link rel="stylesheet" href="css/styles.css?v=1.0">
+     
+    </head>
+
+    <body class="PantallaCompleta">
+
+        <iframe id="idObjCargaIndex2" class="PantallaCompleta" src="index2.html" 
+	sandbox="allow-same-origin allow-scripts allow-forms allow-pointer-lock 
+		 allow-popups allow-top-navigation">
+            Error carga Object / iFrame
+        </iframe>      
+
+	<button onclick="myFunction()">Cambiar color texto de iframe</button>
+
+
+
+	<script>
+		function myFunction() {
+		  var iframe = document.getElementById("idObjCargaIndex2");
+		  var elmnt = iframe.contentWindow.document.getElementById("idPruebaIndex2");
+		  if (elmnt != null){
+		       elmnt.className += " text-color-green";
+		  }
+		}
+
+	</script>
+
+
+
+
+        <script src="js/scripts.js"></script>    
+        <script type="text/javascript"> 
+
+          function servWorker(){
+              // Set up service worker
+              if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register('service-worker.js', {scope: '.'});
+              }
+              // Easter Egg to get it full black
+              // Awesome for OLED screens
+              if (localStorage.getItem('isDeepBlack')) {
+                    document.body.classList.add('deepblack');
+              }        
+          }
+ 
+          function Inicio(){  
+            pruebacolorIndex2();
+           /* servWorker(); */
+          }
+
+          window.onload = Inicio();
+            
+
+        </script>
+
+
+    </body>
+</html>
